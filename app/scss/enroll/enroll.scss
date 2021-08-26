@@ -74,6 +74,10 @@
         justify-content: space-between;
         font-weight: 400;
 
+        @media screen and (min-width: 450px) and (max-width: 770px) {
+            justify-content: space-around;
+        }
+
         @media screen and (min-width: 770px) {
             max-width: 346px;
             margin: 0 auto;
@@ -89,8 +93,10 @@
         margin: 0;
         padding-bottom: 9px;
         color: $color-grey;
+        padding-right: 15px;
 
         @media screen and (min-width: 770px) {
+            padding-right: 0;
             padding-bottom: 0;
         }
 
