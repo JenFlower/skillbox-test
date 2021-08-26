@@ -1,0 +1,166 @@
+@import '../components';
+
+.enroll {
+    padding: $size-40 $size-24 $size-55 $size-25;
+    background-color: $color-desktop;
+
+    @media screen and (min-width: 770px) {
+        padding: $size-69 $size-123 $size-78 $size-123;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    @media screen and (min-width: 1200px) {
+        padding: 57px 132px 57px 85px;
+        grid-area: enroll;
+    }
+
+    &__title {
+        @include font($size-30, $size-36);
+        font-weight: 700;
+        font-family: $font-roboto;
+        margin: 0;
+        padding-bottom: $size-19;
+
+        @media screen and (min-width: 770px) {
+            @include font($size-38, $size-40);
+            text-align: center;
+            padding-bottom: 31px;
+        }
+
+        @media screen and (min-width: 1200px) {
+            @include font(34px, $size-40);
+            text-align: start;
+            padding-bottom: 24px;
+        }
+    }
+
+    &__benefits {
+        @include font($size-15, $size-26);
+        font-family: $font-opensans;
+        font-weight: 400;
+        padding: 0;        
+        list-style-position: inside;
+        margin: 0;
+        padding-bottom: $size-29;
+
+        @media screen and (min-width: 770px) {
+            padding-bottom: $size-52;
+        }
+
+        @media screen and (min-width: 1200px) {
+            padding-bottom: 44px;
+        }
+    }
+
+    &__benefit {
+        color: $color-blue;
+        padding-bottom: $size-12;
+        
+        &:last-child {
+            padding-bottom: 0;
+        }
+    }
+
+    &__benefit-phone {
+        color: $color-grey;
+    }
+
+    &__info {
+        @include font($size-15, $size-17);
+        font-family: $font-roboto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        font-weight: 400;
+
+        @media screen and (min-width: 770px) {
+            max-width: 346px;
+            margin: 0 auto;
+        }
+
+        @media screen and (min-width: 1200px) {
+            min-width: 100%;
+            margin: 0;
+        }
+    }
+
+    &__start {
+        margin: 0;
+        padding-bottom: 9px;
+        color: $color-grey;
+
+        @media screen and (min-width: 770px) {
+            padding-bottom: 0;
+        }
+
+        @media screen and (min-width: 1200px) {
+            font-size: 0;
+
+            &::before {
+                content: "Старт курса: ";
+                @include font($size-15, $size-17, $color-grey);
+            }
+        }
+    }
+
+    &__date {
+        @include font($size-18, $size-21, $color-blue);
+        font-weight: 700;
+
+        @media screen and (min-width: 770px) {
+            font-size: 0;
+
+            &::after {
+                content: "15 июня";
+                @include font($size-18, $size-21, $color-blue);
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+            font-size: 0;
+
+            &::after {
+                content: "7 сентября";
+                @include font(20px, 23px, $color-blue);
+            }
+        }
+    }
+
+    &__places {
+        margin: 0;
+        color: $color-grey;
+
+        @media screen and (min-width: 1200px) {
+            font-size: 0;
+
+            &::before {
+                content: "Осталось: ";
+                @include font($size-15, $size-17, $color-grey);
+            }
+        }
+    }
+
+    &__places-count {
+        @include font($size-18, $size-21, $color-blue);
+        font-weight: 700;
+
+        @media screen and (min-width: 770px) {
+            font-size: 0;
+
+            &::after {
+                content: "15 мест";
+                @include font($size-18, $size-21, $color-blue);
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+            font-size: 0;
+
+            &::after {
+                content: "19 мест";
+                @include font(20px, 23px, $color-blue);
+            }
+        }
+    }
+}

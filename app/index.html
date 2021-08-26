@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/app.min.css">
+</head>
+<body class="body">
+    
+    <section class="content">
+        <h1 class="content__title">Стоимость обучения</h1>
+        <div class="price">
+            <div class="price__discount">
+                <span class="price__title">Скидка</span>
+                <span class="price__amount">40%</span>
+                <span class="price__purpose">первым 20</span>
+            </div>
+
+            <div class="info">
+                <div class="info__full-price">
+                    <span class="info__full-price-title">Полная стоимость курса</span>
+                    <span class="info__full-price-amount">50 000 </span>
+                </div>
+                <div class="info__installment-plan">
+                    <span class="info__installment-plan-amount">2 900 </span>
+                    <span class="info__installment-plan-title">Рассрочка без первого взноса</span>
+                </div>
+                <div class="info__purpose">
+                    <span class="info__purpose-amount">29 000 </span>
+                    <span class="info__purpose-title">Первым 20-ти</span>
+                </div>
+            </div>
+        </div>
+        <div class="enroll">
+            <h2 class="enroll__title">Запишитесь на курс</h2>
+            <ul class="enroll__benefits" > <!--style="display: none;"-->
+                <li class="enroll__benefit"><span class="enroll__benefit-phone">Телефон</span></li>
+                <li class="enroll__benefit"><span class="enroll__benefit-phone">Телефон</span></li>
+                <li class="enroll__benefit"><span class="enroll__benefit-phone">Телефон</span></li>
+                <li class="enroll__benefit"><span class="enroll__benefit-phone">Телефон</span></li>
+            </ul>
+            <div class="enroll__info">
+                <p class="enroll__start">Старт курса <span class="enroll__date">15 июля</span></p>
+                <p class="enroll__places">Осталось <span class="enroll__places-count">12 мест</span></p>
+            </div>
+            <form class="form">
+                <input class="form__input form__name" placeholder="Имя" type="text" required>
+                <input class="form__input form__phone" placeholder="Телефон" type="number" required>
+                <input class="form__input form__email" placeholder="Email" type="email" required>
+                <input class="form__submit" type="submit" value="Записаться">
+                <div class="form__checkbox-block">
+                    <input class="form__checkbox" type="checkbox" id="checkbox-personal-data">
+                    <label class="form__checkbox-label" for="checkbox-personal-data">Я согласен с условиями обработки 
+                        <a class="form__link" href="#">персональных данных</a>
+                    </label>
+                </div>              
+            </form>
+        </div>
+    </section>
+    
+    <script src="scripts/app.min.js"></script>
+</body>
+</html>

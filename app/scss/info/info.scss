@@ -1,0 +1,133 @@
+@import '../components';
+
+.info {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-top: $size-88;
+    padding-bottom: $size-41;
+
+    @media screen and (min-width: 770px) {
+        @include font($size-45, $size-53);
+        padding-top: $size-133;
+        padding-bottom: $size-73;
+    }
+
+    @media screen and (min-width: 1200px) {
+        padding: 0;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__full-price {
+        opacity: 40%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__full-price-title {
+        @include font($size-15, $size-17, $color-white);
+        font-family: Roboto, Arial, Helvetica, sans-serif;
+        padding-bottom: 5px;
+    }
+
+    &__full-price-amount {
+        @include font($size-36, $size-47, $color-white);
+        font-family: RobotoSlabLight, Arial, Helvetica, sans-serif;
+        font-weight: 300;
+        text-decoration: line-through;
+
+        &::after {
+            content: "\20BD";
+        }
+
+        @media screen and (min-width: 1200px) {
+            @include font($size-38, $size-50, $color-white);
+        }
+    }
+
+    &__installment-plan {
+        display: flex;
+        flex-direction: column;
+        padding-top: $size-11;
+
+        @media screen and (min-width: 770px) {
+            padding-top: $size-21;
+        }
+
+        @media screen and (min-width: 1200px) {
+            padding-top: 5px;
+        }
+    }
+
+    &__installment-plan-amount {
+        @include font($size-56, $size-73, $color-white);
+        font-family: RobotoSlabLight, Arial, Helvetica, sans-serif;
+        font-weight: 700;
+
+        &::after {
+            content: "\20BD";
+            font-weight: 500;
+        }
+
+        @media screen and (min-width: 770px) {
+            @include font($size-80, $size-106, $color-white);
+        }
+    }
+
+    &__installment-plan-title {
+        @include font($size-18, $size-21, $color-white);
+        font-family: Roboto, Arial, Helvetica, sans-serif;
+        font-weight: 700;
+        padding-bottom: $size-24;
+
+        @media screen and (min-width: 770px) {
+            @include font($size-20, $size-24, $color-white);
+            padding-bottom: $size-34;
+        }
+
+        @media screen and (min-width: 1200px) {
+            @include font(23px, 27px, $color-white);
+            padding-bottom: 32px;
+        }
+    }
+
+    &__purpose {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__purpose-amount {
+        @include font($size-40, $size-52, $color-white);
+        font-family: RobotoSlabLight, Arial, Helvetica, sans-serif;
+        font-weight: 300;
+
+        &::after {
+            content: "\20BD";
+        }
+
+        @media screen and (min-width: 770px) {
+            @include font($size-50, $size-65, $color-white);
+        }
+    }
+
+    &__purpose-title {
+        @include font($size-15, $size-17, $color-white);
+        font-family: Roboto, Arial, Helvetica, sans-serif;
+        font-weight: 400;
+
+        @media screen and (min-width: 770px) {
+            @include font($size-18, $size-21, $color-white);
+        }
+
+        @media screen and (min-width: 1200px) {
+            font-size: 0;
+
+            &::after {
+                content: "Для первых 20-ти";
+                @include font($size-20, 32px, $color-white);
+            }
+        }
+    }
+}

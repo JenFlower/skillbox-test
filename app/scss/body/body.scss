@@ -1,0 +1,13 @@
+@import '../components';
+
+.body {
+    background-color: #F6F7FD;
+
+    @media screen and (min-width: 770px) {
+        padding-bottom: $size-80;
+    }
+
+    @media screen and (min-width: 1200px) {
+        padding-bottom: $size-90;
+    }
+}
