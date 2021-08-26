@@ -46,12 +46,12 @@
                 <p class="enroll__places">Осталось <span class="enroll__places-count">12 мест</span></p>
             </div>
             <form class="form">
-                <input class="form__input form__name" placeholder="Имя" type="text" required>
-                <input class="form__input form__phone" placeholder="Телефон" type="number" required>
-                <input class="form__input form__email" placeholder="Email" type="email" required>
+                <input class="form__input form__input-data form__name" placeholder="Имя" type="text" name="name" autocomplete="off" required>
+                <input class="form__input form__input-data form__phone" placeholder="Телефон" type="number" name="phone" autocomplete="off" required>
+                <input class="form__input form__input-data form__email" placeholder="Email" type="email" name="email" autocomplete="off" required>
                 <input class="form__submit" type="submit" value="Записаться">
                 <div class="form__checkbox-block">
-                    <input class="form__checkbox" type="checkbox" id="checkbox-personal-data">
+                    <input class="form__input form__checkbox" type="checkbox" id="checkbox-personal-data" required>
                     <label class="form__checkbox-label" for="checkbox-personal-data">Я согласен с условиями обработки 
                         <a class="form__link" href="#">персональных данных</a>
                     </label>
