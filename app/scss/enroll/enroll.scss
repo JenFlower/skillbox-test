@@ -6,11 +6,11 @@
 
     @media screen and (min-width: 770px) {
         padding: $size-69 $size-123 $size-78 $size-123;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        box-shadow: 0 0 $size-10 rgba(0,0,0,0.1);
     }
 
     @media screen and (min-width: 1200px) {
-        padding: 57px 132px 57px 85px;
+        padding: $size-56 $size-133 $size-56 $size-85;
         grid-area: enroll;
     }
 
@@ -24,13 +24,13 @@
         @media screen and (min-width: 770px) {
             @include font($size-38, $size-40);
             text-align: center;
-            padding-bottom: 31px;
+            padding-bottom: $size-30;
         }
 
         @media screen and (min-width: 1200px) {
-            @include font(34px, $size-40);
+            @include font($size-34, $size-40);
             text-align: start;
-            padding-bottom: 24px;
+            padding-bottom: $size-24;
         }
     }
 
@@ -48,7 +48,7 @@
         }
 
         @media screen and (min-width: 1200px) {
-            padding-bottom: 44px;
+            padding-bottom: $size-44;
         }
     }
 
@@ -122,7 +122,7 @@
 
             &::after {
                 content: "7 сентября";
-                @include font(20px, 23px, $color-blue);
+                @include font($size-20, $size-24, $color-blue);
             }
         }
     }
@@ -159,7 +159,7 @@
 
             &::after {
                 content: "19 мест";
-                @include font(20px, 23px, $color-blue);
+                @include font($size-20, $size-24, $color-blue);
             }
         }
     }

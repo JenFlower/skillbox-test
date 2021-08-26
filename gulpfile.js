@@ -1,3 +1,5 @@
+const ghPages = require('gulp-gh-pages');
+const gulp = require('gulp');
 // Определяем переменную "preprocessor"
 let preprocessor = 'sass'; // Выбор препроцессора в проекте - sass
 
@@ -22,6 +24,14 @@ const imagecomp = require('compress-images');
 // Подключаем модуль del
 const del = require('del');
 
+// function deploy(cb) {
+// 	ghPages.publish(path.join(process.cwd(), './dist/**/*'), cb);
+// }
+// exports.deploy = deploy;
+gulp.task('deploy', function() {
+	return gulp.src('./dist/**/*')
+	  .pipe(ghPages());
+});
 // Определяем логику работы Browsersync
 function browsersync() {
     browserSync.init({ // Инициализация Browsersync
@@ -58,8 +68,8 @@ function styles() {
 
 async function images() {
 	imagecomp(
-		"app/images/src/**/*", // Берём все изображения из папки источника
-		"app/images/dist/", // Выгружаем оптимизированные изображения в папку назначения
+		"app/images/**/*", // Берём все изображения из папки источника
+		"app/distimages/", // Выгружаем оптимизированные изображения в папку назначения
 		{ compress_force: false, statistic: true, autoupdate: true }, false, // Настраиваем основные параметры
 		{ jpg: { engine: "mozjpeg", command: ["-quality", "75"] } }, // Сжимаем и оптимизируем изображеня
 		{ png: { engine: "pngquant", command: ["--quality=75-100", "-o"] } },
@@ -73,22 +83,16 @@ async function images() {
 	)
 }
 
-function fonts() {
-    gulp.task('fonts:copy', function() { 
-        gulp.src('./assets/fonts/**/*.{eot,svg,ttf,woff,woff2}') 
-            .pipe(gulp.dest('./public/fonts/')); 
-    });
-}
-
 function cleanimg() {
-	return del('app/images/dist/**/*', { force: true }) // Удаляем все содержимое папки "app/images/dest/"
+	return del('app/images/**/*', { force: true }) // Удаляем все содержимое папки "app/images/dest/"
 }
 
 function buildcopy() {
 	return src([ // Выбираем нужные файлы
 		'app/css/**/*.min.css',
 		'app/scripts/**/*.min.js',
-		'app/images/dist/**/*',
+		'app/images/**/*',
+		'app/fonts/**/*.woff',
 		'app/**/*.html',
 		], { base: 'app' }) // Параметр "base" сохраняет структуру проекта при копировании
 	.pipe(dest('dist')) // Выгружаем в папку с финальной сборкой

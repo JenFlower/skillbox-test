@@ -17,15 +17,15 @@
         }
 
         @media screen and (min-width: 1200px) {
-            @include font(55px, 32px);
+            @include font($size-55, $size-32);
             grid-area: title;
-            padding-bottom: 67px;
+            padding-bottom: $size-67;
         }
     }
 
     @media screen and (min-width: 770px) {
         max-width: 710px;
-        padding-top: 50px;
+        padding-top: $size-50;
     }
 
     @media screen and (min-width: 1200px) {
@@ -35,6 +35,6 @@
             "title title"
             "price enroll";
         max-width: 1170px;
-        padding-top: 65px;
+        padding-top: $size-65;
     }
 }

@@ -88,8 +88,8 @@
         }
 
         @media screen and (min-width: 1200px) {
-            @include font(23px, 27px, $color-white);
-            padding-bottom: 32px;
+            @include font($size-24, $size-26, $color-white);
+            padding-bottom: $size-32;
         }
     }
 
@@ -126,7 +126,7 @@
 
             &::after {
                 content: "Для первых 20-ти";
-                @include font($size-20, 32px, $color-white);
+                @include font($size-20, $size-32, $color-white);
             }
         }
     }

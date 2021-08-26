@@ -26,7 +26,7 @@
             "personal-data";
     }
 
-    &__input {
+    &__input-data {
         @include font($size-15, $size-28, $color-grey);
         width: 100%;
         font-family: $font-opensans;
@@ -46,6 +46,18 @@
 
     &__phone {
         grid-area: phone;
+
+        -moz-appearance: textfield;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        &:hover,
+        &:focus {
+            -moz-appearance: number-input;
+        }
     }
 
     &__email {
@@ -78,19 +90,17 @@
         }
 
         &:checked {
-            background-image: url("../../images/dist/check.jpg");
+            background-image: url("../images/check.jpg");
             background-size: $size-14 $size-11;
             background-repeat: no-repeat;
             background-position: center;
 
             @media screen and (min-width: 770px) {
                 border: none;
-                background-image: url("../../images/dist/check-white.svg");
+                background-image: url("../images/check-white.svg");
                 background-color: $color-blue;
             }
         }
-
-        
     }
 
     &__checkbox-label {
@@ -126,6 +136,13 @@
         margin-top: $size-28;
         padding: 0;
 
+        &_disabled {
+            opacity: 0.2;
+            // border: 1px solid #000;
+            user-select: none;
+            pointer-events: none;
+        }
+
         &:hover {
             cursor: pointer;
         }
@@ -136,7 +153,7 @@
 
         @media screen and (min-width: 1200px) {
             margin: 0;
-            margin-bottom: 13px;
+            margin-bottom: $size-12;
         }
     }
 }
